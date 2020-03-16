@@ -49,7 +49,7 @@ class Posts extends Component {
         return (
             <div>
                 <section className="Posts">
-                        {posts}
+                    {posts}
                 </section>
                 <Route path="/posts/:id" exact component={FullPost} /> 
             </div>

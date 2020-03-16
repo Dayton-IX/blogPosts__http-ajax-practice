@@ -19,6 +19,7 @@ class FullPost extends Component {
 
     loadData() {
         if (this.props.match.params.id) {
+            // eslint-disable-next-line
             if ( !this.state.loadedPost || this.state.loadedPost.id != this.props.match.params.id) {
                 axios.get('/posts/' + this.props.match.params.id)
                     .then(response => {

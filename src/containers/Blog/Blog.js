@@ -8,7 +8,7 @@ import Posts from './Posts/Posts';
 import asyncComponent from '../../hoc/asyncComponent';
 //import NewPost from './NewPost/NewPost';
 const AsyncNewPost = asyncComponent(() => {
-    return import();
+    return import('./NewPost/NewPost');
 });
 
 class Blog extends Component {
@@ -41,7 +41,7 @@ class Blog extends Component {
                 </header>
                 {/* <Route path="/" exact render={() => <h1>Home</h1>} /> */}
                 <Switch>
-                    { this.state.auth ? <Route path="/new-post" component={NewPost} /> : null }
+                    { this.state.auth ? <Route path="/new-post" component={AsyncNewPost} /> : null }
                     <Route path="/posts" component={Posts} />
                     <Route render={() => <h1>404 Page not Found :(</h1>} />
                     {/* <Redirect from="/" to="/posts" /> */}

@@ -5,7 +5,11 @@ import { Route, NavLink, Switch, Redirect } from 'react-router-dom';
 
 import './Blog.css';
 import Posts from './Posts/Posts';
-import NewPost from './NewPost/NewPost';
+import asyncComponent from '../../hoc/asyncComponent';
+//import NewPost from './NewPost/NewPost';
+const AsyncNewPost = asyncComponent(() => {
+    return import();
+});
 
 class Blog extends Component {
     state = {
@@ -19,7 +23,7 @@ class Blog extends Component {
                     <nav>
                         <ul>
                             <li><NavLink 
-                                to="/" 
+                                to="/posts" 
                                 exact
                                 // activeClassName="my-active" //? to change active class name
                                 // activeStyle={{ //? to change active styling inline
